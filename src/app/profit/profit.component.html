@@ -1,0 +1,23 @@
+<div class="search">
+  <input type="text" class="rectangle-5" placeholder="Digite qualquer coisa da tabela" (keyup)="filter = $event.target.value">
+</div>
+<br/>
+<hr>
+<div>
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Moeda</th>
+      <th>Rendimento</th>
+      <th>%</th>
+      <th>Saldo</th>
+    </tr>
+    <tr *ngFor="let item of profits | filterByProfit: filter"> 
+      <td>{{item.dateMoviment}}</td>
+      <td>{{item.coin}}</td>
+      <td>{{item.proft}}</td>
+      <td>{{item.profitPercentage}}</td>
+      <td>{{item.balance}}</td>
+    </tr>
+  </table>
+</div>
